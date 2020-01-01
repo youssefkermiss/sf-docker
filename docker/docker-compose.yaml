@@ -10,13 +10,13 @@ services:
       - '9002:9000'
     volumes:
       - ../:/var/www/sf-docker:cached
-      - ./logs/symfony:/var/www/sf-docker/var/logs:cached
+      - ./logs/sf-docker:/var/www/sf-docker/var/logs:cached
     links:
       - postgres
   nginx:
     build: nginx
     ports:
-      - '801:80'
+      - '8080:80'
     links:
       - php
     volumes_from:
